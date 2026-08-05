@@ -448,9 +448,10 @@ section { position: relative; }
   pointer-events: none;
 }
 .services > .container { position: relative; z-index: 1; }
-.section-head { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
 .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); color: var(--silver-light); }
 .section-head p { font-size: 1.05rem; }
+.services .section-head, .how-it-works .section-head { margin-bottom: 64px; }
 
 .card-grid {
   display: grid;
@@ -522,15 +523,6 @@ section { position: relative; }
   border-radius: 20px;
   padding: 30px 36px;
 }
-.callout-icon {
-  width: 44px; height: 44px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: rgba(23, 155, 255, 0.15);
-  color: var(--accent-2);
-  display: flex; align-items: center; justify-content: center;
-}
-.callout-icon svg { width: 20px; height: 20px; }
 .services-note {
   color: var(--silver-light);
   font-weight: 600;
@@ -752,7 +744,33 @@ section { position: relative; }
   .hero-visual { order: -1; }
   .phone-mockup { width: 260px; height: 510px; }
   .card-grid { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: 1fr; gap: 28px; }
+  .service-card.featured { padding: 38px 30px; }
+  .service-card.featured .card-icon { width: 52px; height: 52px; }
+  .service-card.featured h3 { font-size: 1.35rem; }
+  .services-callout { flex-direction: column; text-align: center; padding: 28px 26px; }
+
+  .steps { flex-direction: column; align-items: stretch; gap: 4px; }
+  .steps::before { display: none; }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    text-align: left;
+    padding: 0 0 32px;
+  }
+  .step:last-child { padding-bottom: 0; }
+  .step::after {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 54px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border-strong);
+  }
+  .step:last-child::after { display: none; }
+  .step-num { margin: 0; flex-shrink: 0; }
+  .step p { text-align: left; margin: 12px 0 0; max-width: none; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
 }

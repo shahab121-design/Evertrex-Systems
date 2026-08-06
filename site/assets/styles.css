@@ -459,12 +459,12 @@ section { position: relative; }
   gap: 28px;
 }
 .service-card {
-  background: linear-gradient(160deg, rgba(20, 21, 27, 0.92), rgba(11, 12, 16, 0.82));
+  background: linear-gradient(160deg, rgba(14, 22, 38, 0.92), rgba(8, 13, 24, 0.88));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 38px 30px;
+  padding: 36px 32px;
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
@@ -475,8 +475,8 @@ section { position: relative; }
   box-shadow: var(--shadow-lift);
   border-color: var(--border-strong);
 }
-.service-card h3 { color: var(--silver-light); font-size: 1.35rem; font-weight: 700; }
-.service-card p { margin-bottom: 0; max-width: 32ch; }
+.service-card h3 { color: var(--silver-light); font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; }
+.service-card p { margin-bottom: 0; max-width: 32ch; font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary); }
 
 /* ----- Connected feel between the three product cards (desktop only) ----- */
 .card-grid-connected { position: relative; }
@@ -493,15 +493,15 @@ section { position: relative; }
   z-index: 2;
 }
 
-/* ----- Product cards: visual mockup panel + copy ----- */
-.product-card { padding: 34px 28px 32px; display: flex; flex-direction: column; }
+/* ----- Product cards: one focal illustration per card, unified sizing ----- */
+.product-card { display: flex; flex-direction: column; }
 .card-visual {
   position: relative;
   margin-bottom: 24px;
-  padding: 18px;
-  min-height: 168px;
+  padding: 24px;
+  min-height: 176px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
   border: 1px solid var(--border);
@@ -513,23 +513,12 @@ section { position: relative; }
   border-color: rgba(49, 182, 255, 0.28);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(23, 155, 255, 0.03));
 }
-.visual-pill {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(23, 155, 255, 0.14);
-  border: 1px solid rgba(49, 182, 255, 0.25);
-  color: var(--accent-2);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 4px 9px;
-  border-radius: 999px;
-  z-index: 1;
-}
 
-/* Card 1 — mini browser mockup */
+/* Card 1 — single browser-window illustration */
+.visual-website { padding: 28px; }
 .mock-browser {
+  width: 100%;
+  max-width: 220px;
   border-radius: 10px;
   background: var(--surface);
   border: 1px solid var(--border-strong);
@@ -545,14 +534,10 @@ section { position: relative; }
 }
 .mock-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--silver-dark); opacity: 0.6; }
 .mock-address { flex: 1; height: 7px; margin-left: 6px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); }
-.mock-browser-body { padding: 16px 14px; display: flex; flex-direction: column; gap: 8px; }
-.mock-line { display: block; height: 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); }
-.mock-line-lg { width: 78%; }
-.mock-line-sm { width: 52%; background: rgba(255, 255, 255, 0.06); }
+.mock-browser-body { padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.mock-line { display: block; height: 8px; width: 70%; border-radius: 999px; background: rgba(255, 255, 255, 0.1); }
 .mock-cta {
-  align-self: flex-start;
-  margin-top: 6px;
-  padding: 6px 14px;
+  padding: 7px 18px;
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 700;
@@ -562,70 +547,56 @@ section { position: relative; }
 }
 .service-card:hover .mock-cta { box-shadow: 0 0 16px rgba(49, 182, 255, 0.55); }
 
-/* Card 2 — AI receptionist mockup (the "hero" card) */
-.product-card-hero {
-  border-color: rgba(49, 182, 255, 0.3);
-  box-shadow: 0 0 0 1px rgba(23, 155, 255, 0.32), 0 0 34px rgba(49, 182, 255, 0.14), var(--shadow-soft);
-}
-.product-card-hero:hover {
-  box-shadow: 0 0 0 1px rgba(23, 155, 255, 0.4), 0 0 44px rgba(49, 182, 255, 0.22), var(--shadow-lift);
-}
-.product-card-hero .card-visual { min-height: 190px; gap: 10px; }
-.mock-call { position: relative; display: flex; align-items: center; gap: 8px; }
-.mock-call-ring {
+/* Card 2 — single phone + soundwave illustration, glow lives behind the icon only */
+.visual-receptionist { gap: 18px; }
+.visual-glow {
   position: absolute;
-  left: -1px; top: 50%;
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(49, 182, 255, 0.55);
-  transform: translateY(-50%);
-  animation: call-ring-pulse 2.2s ease-out infinite;
+  width: 100px; height: 100px;
+  left: 30%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(49, 182, 255, 0.35), transparent 72%);
+  animation: glow-pulse 3s ease-in-out infinite;
 }
-.mock-call-icon { width: 18px; height: 18px; color: var(--accent-2); margin-left: 26px; flex-shrink: 0; }
-.mock-call-text { font-size: 0.82rem; font-weight: 700; color: var(--silver-light); }
-.mock-ai-badge {
-  margin-left: auto;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.mock-phone-icon {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
   color: var(--accent-2);
-  background: rgba(23, 155, 255, 0.14);
-  border: 1px solid rgba(49, 182, 255, 0.25);
-  padding: 3px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
+  filter: drop-shadow(0 0 10px rgba(49, 182, 255, 0.45));
+  flex-shrink: 0;
 }
-.mock-chat-bubble {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px 12px 12px 4px;
-  padding: 9px 12px;
-  margin-left: 26px;
-}
-.mock-confirm-chip {
+.mock-soundwave {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  margin-left: 26px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--accent-2);
-  background: rgba(23, 155, 255, 0.1);
-  border: 1px solid rgba(49, 182, 255, 0.22);
-  padding: 5px 10px;
-  border-radius: 999px;
+  gap: 4px;
+  height: 42px;
 }
-.mock-confirm-chip svg { width: 12px; height: 12px; }
-@keyframes call-ring-pulse {
-  0% { opacity: 0.8; transform: translateY(-50%) scale(0.85); }
-  70%, 100% { opacity: 0; transform: translateY(-50%) scale(1.7); }
+.mock-soundwave span {
+  width: 4px;
+  border-radius: 999px;
+  background: var(--accent-2);
+  transform-origin: bottom center;
+  animation: wave-bounce 1.2s ease-in-out infinite;
+}
+.mock-soundwave span:nth-child(1) { height: 35%; animation-delay: 0s; }
+.mock-soundwave span:nth-child(2) { height: 65%; animation-delay: 0.15s; }
+.mock-soundwave span:nth-child(3) { height: 100%; animation-delay: 0.3s; }
+.mock-soundwave span:nth-child(4) { height: 55%; animation-delay: 0.45s; }
+.mock-soundwave span:nth-child(5) { height: 40%; animation-delay: 0.6s; }
+@keyframes wave-bounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
 
 /* Card 3 — automation flow diagram */
-.visual-automation { align-items: center; }
+.visual-automation { flex-direction: column; }
 .mock-flow { width: 100%; height: auto; }
 .flow-line { stroke: var(--border-strong); }
 .flow-node { fill: var(--surface-2); stroke: var(--accent-2); stroke-width: 2; }
@@ -931,7 +902,8 @@ section { position: relative; }
 
   /* Keep the product-card mockups lightweight on smaller screens */
   .card-grid-connected .product-card::after { display: none; }
-  .mock-call-ring { animation: none; opacity: 0; }
+  .visual-glow { animation: none; opacity: 0.5; }
+  .mock-soundwave span { animation: none; }
   .flow-spark { display: none; }
 }
 

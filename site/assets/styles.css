@@ -898,7 +898,7 @@ section { position: relative; }
   .phone-mockup { width: 260px; height: 510px; }
   .hero-logo-graphic {
     left: 50%;
-    max-width: 70vw;
+    max-width: 92vw;
     transform: translate(-50%, -50%);
   }
   .card-grid { grid-template-columns: 1fr; }

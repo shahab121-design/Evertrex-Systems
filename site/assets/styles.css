@@ -34,6 +34,8 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
@@ -894,6 +896,11 @@ section { position: relative; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
   .phone-mockup { width: 260px; height: 510px; }
+  .hero-logo-graphic {
+    left: 50%;
+    max-width: 70vw;
+    transform: translate(-50%, -50%);
+  }
   .card-grid { grid-template-columns: 1fr; }
   .services-callout { flex-direction: column; text-align: center; }
 
